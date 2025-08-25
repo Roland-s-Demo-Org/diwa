@@ -16,6 +16,9 @@ class Model {
 
     public function userSignIn($pEmail, $pPassword, $pHashingAlgorithm) {
         try {
+            if (!preg_match('/^[a-zA-Z0-9_]+$/', $pEmail) || !preg_match('/^[a-zA-Z0-9_]+$/', $pPassword)) {
+                throw new ValueError('Invalid input');
+            }
             $sql = 'SELECT * FROM ' . $this->prefix . 'users WHERE email = \'' . $pEmail . '\' AND password = \'' . hash($pHashingAlgorithm, $pPassword) . '\';';
             return $this->db->query($sql)->fetchAll();
         }
@@ -26,6 +29,9 @@ class Model {
 
     public function isUserEmailInUse($pEmail) {
         try {
+            if (!preg_match('/^[a-zA-Z0-9_]+$/', $pEmail)) {
+                throw new ValueError('Invalid input');
+            }
             $sql = 'SELECT * FROM ' . $this->prefix . 'users WHERE email = \'' . $pEmail . '\'';
             $result = $this->db->query($sql)->fetchAll();
             return (false !== $result && 0 < count($result));
@@ -286,6 +292,9 @@ class Model {
 
     function editPost($pPostId, $pPost) {
         try {
+            if (!preg_match('/^[a-zA-Z0-9_]+$/', $_POST['post']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_GET['id'])) {
+                throw new ValueError('Invalid input');
+            }
             $sql = 'UPDATE ' . $this->prefix . 'posts SET text = \'' . $_POST['post'] . '\' WHERE id = ' . $_GET['id'];
             $result = $this->db->exec($sql);
             return ($result !== 0);
