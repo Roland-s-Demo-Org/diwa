@@ -13,7 +13,7 @@
     "vendor-dir": "app/vendor"
   },
   "require": {
-    "erusev/parsedown": "1.6.*"
+    "erusev/parsedown": "^1.7.2"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
