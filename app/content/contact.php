@@ -102,9 +102,8 @@ catch(Exception $ex) {
             </div>
             <div class="form-group">
                 <label for="message">Your Message:</label>
-                <textarea class="form-control" rows="5" name="message" id="message"><?php echo isset($_POST['message']) ? $_POST['message'] : ''; ?></textarea>
+                <textarea class="form-control" rows="5" name="message" id="message"><?php echo htmlentities(isset($_POST['message']) ? $_POST['message'] : '', ENT_QUOTES); ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary"><?php echo icon('envelope'); ?> Send Message</button>
         </form>
     </div>
-</div>
