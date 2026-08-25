@@ -39,7 +39,7 @@ catch(Exception $ex) {
                 echo '<span class="pull-right"><a href="?page=editprofile" class="btn btn-primary">Edit your profile</a></span>';
             }
             elseif($isAdmin) {
-                echo '<span class="pull-right"><a href="?page=editprofile&id=' . $userId . '" class="btn btn-primary">Edit this profile</a></span>';
+                echo '<span class="pull-right"><a href="?page=editprofile&id=' . htmlentities($userId, ENT_QUOTES) . '" class="btn btn-primary">Edit this profile</a></span>';
             }
             ?>
         </h1>
