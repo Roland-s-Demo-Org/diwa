@@ -65,7 +65,7 @@ catch(Exception $ex) {
                     </div>
                     <div class="form-group">
                         <label for="post">Your Post:</label>
-                        <textarea class="form-control" rows="5" name="post" id="post"><?php echo isset($_POST['post']) ? $_POST['post'] : ''; ?></textarea>
+                        <textarea class="form-control" rows="5" name="post" id="post"><?php echo isset($_POST['post']) ? htmlentities($_POST['post'], ENT_QUOTES) : ''; ?></textarea>
                     </div>
                     <?php if(1 === $_SESSION['user']['is_admin']) { ?>
                         <div  class="checkbox">

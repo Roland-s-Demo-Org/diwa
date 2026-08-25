@@ -34,7 +34,7 @@ function menuEntry($pTitle, $pPage = null) {
         }
     </style>
 </head>
-<body class="<?php echo isset($_GET['page']) ? $_GET['page'] : 'index'; ?>">
+<body class="<?php echo isset($_GET['page']) ? htmlentities($_GET['page'], ENT_QUOTES) : 'index'; ?>">
 <!--[if lte IE 10]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->

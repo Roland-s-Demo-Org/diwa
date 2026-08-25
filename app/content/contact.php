@@ -78,7 +78,7 @@ catch(Exception $ex) {
         <form action="?page=contact" method="post">
             <div class="form-group">
                 <label for="name">Your Name:</label>
-                <input type="text" class="form-control" name="name" value="<?php echo (isset($_POST['name']) ? $_POST['name'] : ''); ?>" id="name">
+                <input type="text" class="form-control" name="name" value="<?php echo htmlentities((isset($_POST['name']) ? $_POST['name'] : ''), ENT_QUOTES); ?>" id="name">
             </div>
             <div class="form-group">
                 <label for="email">Your E-Mail-Adress:</label>
@@ -102,9 +102,8 @@ catch(Exception $ex) {
             </div>
             <div class="form-group">
                 <label for="message">Your Message:</label>
-                <textarea class="form-control" rows="5" name="message" id="message"><?php echo isset($_POST['message']) ? $_POST['message'] : ''; ?></textarea>
+                <textarea class="form-control" rows="5" name="message" id="message"><?php echo isset($_POST['message']) ? htmlentities($_POST['message'], ENT_QUOTES) : ''; ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary"><?php echo icon('envelope'); ?> Send Message</button>
         </form>
     </div>
-</div>
