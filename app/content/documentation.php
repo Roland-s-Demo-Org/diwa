@@ -50,7 +50,7 @@ catch(Exception $ex) {
     <div class="col-lg-9">
         <?php
         if(isset($_GET['file']) && !empty($_GET['file'])) {
-            echo '<h1>' . $_GET['file'] . '</h1><hr/>';
+            echo '<h1>' . htmlentities($_GET['file'], ENT_QUOTES) . '</h1><hr/>';
             if (file_exists($rootPath . $path . $_GET['file'])) {
                 $fileExtension = strtolower(substr($_GET['file'], strrpos($_GET['file'], '.') + 1));
                 $validMarkdownExtensions = array('md', 'markdown');
@@ -82,9 +82,8 @@ catch(Exception $ex) {
                     echo '<div class="alert alert-info">You can only view files with the following file extensions: ' . implode(', ', $validExtensions) . '</div>';
                 }
             } else {
-                echo '<div class="alert alert-info">The file ' . $_GET['file'] . ' does not exist.</div>';
+                echo '<div class="alert alert-info">The file ' . htmlentities($_GET['file'], ENT_QUOTES) . ' does not exist.</div>';
             }
         }
         ?>
     </div>
-</div>

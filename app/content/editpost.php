@@ -62,7 +62,7 @@ catch(Exception $ex) {
                 <form action="?page=editpost&id=<?php echo $_GET['id']; ?>" method="post">
                     <div class="form-group">
                         <label for="post">Your Post:</label>
-                        <textarea class="form-control" rows="5" name="post" id="post"><?php echo isset($_POST['post']) ? $_POST['post'] : $post['text']; ?></textarea>
+                        <textarea class="form-control" rows="5" name="post" id="post"><?php echo htmlentities(isset($_POST['post']) ? $_POST['post'] : $post['text'], ENT_QUOTES); ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Edit Post</button>
                 </form>
