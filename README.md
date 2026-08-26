@@ -31,6 +31,32 @@ commands:
 
 DIWA will be accessible on port 8080.
 
+## Testing
+
+This project includes a comprehensive test suite for XSS mitigation fixes.
+
+### Quick Start
+```bash
+# Install test dependencies
+composer install --dev
+
+# Run all tests
+composer test
+
+# Quick verification (no PHPUnit needed)
+php verify-fix.php
+```
+
+### Documentation
+- **[TESTING.md](TESTING.md)** - Quick start guide
+- **[COMPLETE_PACKAGE.md](COMPLETE_PACKAGE.md)** - Complete test suite overview
+- **[tests/README.md](tests/README.md)** - Detailed test documentation
+
+### Test Coverage
+- ✅ 24 test methods covering 15+ XSS attack vectors
+- ✅ Unit and integration tests
+- ✅ CI/CD ready
+
 ## Reset DIWA
 There are three options to reset DIWA's Database:
 
