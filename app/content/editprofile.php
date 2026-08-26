@@ -72,7 +72,7 @@ $countryList = array('Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'And
             echo '<div class="alert alert-success">' . ($adminMode ? 'The' : 'Your') . ' profile was updated.</div>';
         }
         ?>
-        <form method="post" action="?page=editprofile<?php echo ($adminMode ? '&id=' . $userId : '') ?>">
+        <form method="post" action="?page=editprofile<?php echo ($adminMode ? '&id=' . htmlentities($userId, ENT_QUOTES) : '') ?>">
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" name="email" value="<?php echo $userData['email']; ?>" id="email">
