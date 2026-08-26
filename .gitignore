@@ -2,3 +2,6 @@
 *.iml
 app/vendor
 mail.log
+vendor/
+coverage/
+.phpunit.result.cache

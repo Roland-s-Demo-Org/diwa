@@ -78,7 +78,7 @@ catch(Exception $ex) {
         <form action="?page=contact" method="post">
             <div class="form-group">
                 <label for="name">Your Name:</label>
-                <input type="text" class="form-control" name="name" value="<?php echo (isset($_POST['name']) ? $_POST['name'] : ''); ?>" id="name">
+                <input type="text" class="form-control" name="name" value="<?php echo htmlentities((isset($_POST['name']) ? $_POST['name'] : ''), ENT_QUOTES); ?>" id="name">
             </div>
             <div class="form-group">
                 <label for="email">Your E-Mail-Adress:</label>

@@ -16,6 +16,11 @@
     "erusev/parsedown": "1.6.*"
   },
   "require-dev": {
-    "heroku/heroku-buildpack-php": "*"
+    "heroku/heroku-buildpack-php": "*",
+    "phpunit/phpunit": "^9.5"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test-coverage": "phpunit --coverage-html coverage"
   }
 }
