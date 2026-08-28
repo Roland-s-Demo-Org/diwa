@@ -89,7 +89,7 @@ $adminsOnly = (1 == $thread['admins_only']);
         <div class="panel panel-primary">
             <div class="panel-heading"><strong>New Post</strong></div>
             <div class="panel-body">
-                <form action="?page=thread&id=<?php echo $_GET['id']; ?>" method="post">
+                <form action="?page=thread&id=<?php echo htmlentities($_GET['id'], ENT_QUOTES); ?>" method="post">
                     <div class="form-group">
                         <textarea class="form-control" rows="5" name="post"></textarea>
                     </div>
