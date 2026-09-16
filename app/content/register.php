@@ -98,11 +98,11 @@ $countryList = array('Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'And
         <form method="post" action="?page=register">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" class="form-control" name="username" value="<?php echo (isset($_POST['username']) ? $_POST['username'] : ''); ?>" id="username">
+                <input type="text" class="form-control" name="username" value="<?php echo htmlentities((isset($_POST['username']) ? $_POST['username'] : ''), ENT_QUOTES); ?>" id="username">
             </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" name="email" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : ''); ?>" id="email">
+                <input type="email" class="form-control" name="email" value="<?php echo htmlentities((isset($_POST['email']) ? $_POST['email'] : ''), ENT_QUOTES); ?>" id="email">
             </div>
             <div class="form-group">
                 <label for="country">Location:</label>

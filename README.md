@@ -31,6 +31,28 @@ commands:
 
 DIWA will be accessible on port 8080.
 
+## Security Testing
+
+This repository includes a comprehensive test suite for XSS vulnerability fixes.
+
+### Running Security Tests
+
+```bash
+# Install test dependencies
+composer install
+
+# Run all tests
+composer test
+```
+
+For detailed testing instructions, see [TESTING.md](TESTING.md).
+
+### Test Suite Includes:
+- 18+ automated PHPUnit tests
+- XSS vulnerability validation
+- Manual browser-based testing
+- Comprehensive documentation
+
 ## Reset DIWA
 There are three options to reset DIWA's Database:
 
