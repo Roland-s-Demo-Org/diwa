@@ -159,8 +159,10 @@ class Model {
 
     public function removeDownload($pId) {
         try {
-            $sql = 'DELETE FROM ' . $this->prefix . 'downloads WHERE id = ' . $pId;
-            $result = $this->db->exec($sql);
+            $sql = 'DELETE FROM ' . $this->prefix . 'downloads WHERE id = ?';
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([$pId]);
+            $result = $stmt->rowCount();
             return ($result !== 0);
         }
         catch(Exception $ex) {
