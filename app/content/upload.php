@@ -77,11 +77,11 @@ catch(Exception $ex) {
 
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" class="form-control" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : ''; ?>" id="title">
+                <input type="text" class="form-control" name="title" value="<?php echo isset($_POST['title']) ? htmlentities($_POST['title'], ENT_QUOTES) : ''; ?>" id="title">
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" rows="5" name="description" id="description"><?php echo isset($_POST['description']) ? $_POST['description'] : ''; ?></textarea>
+                <textarea class="form-control" rows="5" name="description" id="description"><?php echo isset($_POST['description']) ? htmlentities($_POST['description'], ENT_QUOTES) : ''; ?></textarea>
             </div>
             <div class="form-group">
                 <label for="file">File (max. 10MB):</label>
